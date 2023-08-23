@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mYstrg='hgfdsa'
+        function printTav(strg) {
+            for(var i=0;i<strg.length;i++)
+            {
+                console.log(strg[i]);
+            }
+        }
+        printTav(mYstrg)
+        //2
+        function printIndexOfString(strg) {
+            var myStrgn="";
+            for(var i=0;i<strg.length;i++)
+            {
+                myStrgn=myStrgn+strg[i]+i;
+            }
+            console.log(myStrgn);
+            return myStrgn;
+        }
+        printIndexOfString(mYstrg)
+        //3
+        function zogiTo2(strg) {
+            var myStrgn='';
+            for(var i=0;i<strg.length;i++)
+            {
+                if(i%2==0)
+                { 
+                    myStrgn=myStrgn+strg[i]; 
+                }
+                else
+                {
+                    myStrgn=myStrgn+2;
+                }
+            }
+            console.log(myStrgn);
+            return myStrgn;
+        }
+        zogiTo2(mYstrg)
+        //4
+        function printYesOrNo(name) {
+            if(name[0]=='A')
+            {
+                console.log('hellow');
+            }
+            else{
+                console.log('bye');
+            }
+        }
+        printYesOrNo('fdd')
+        printYesOrNo('Add')
+        //5
+        function IfEtavStart(familyName) {
+            if(name[0]=='E')
+            {
+                
+            }
+        }
+    </script>
+</body>
+</html>
