@@ -7,60 +7,81 @@
 </head>
 <body>
     <script>
-        var mYstrg='hgfdsa'
-        function printTav(strg) {
-            for(var i=0;i<strg.length;i++)
+        // var mYstrg='hgfdsa'
+        // function printTav(strg) {
+        //     for(var i=0;i<strg.length;i++)
+        //     {
+        //         console.log('task1 '+strg[i]);
+        //     }
+        // }
+        // printTav(mYstrg)
+        // //2
+        // function printIndexOfString(strg) {
+        //     var myStrgn="";
+        //     for(var i=0;i<strg.length;i++)
+        //     {
+        //         myStrgn=myStrgn+strg[i]+i;
+        //     }
+        //     console.log('task2 '+myStrgn);
+        //     return myStrgn;
+        // }
+        // printIndexOfString(mYstrg)
+        // //3
+        // function zogiTo2(strg) {
+        //     var myStrgn='';
+        //     for(var i=0;i<strg.length;i++)
+        //     {
+        //         if(i%2!=0)
+        //         { 
+        //             myStrgn=myStrgn+strg[i]; 
+        //         }
+        //         else
+        //         {
+        //             myStrgn=myStrgn+2;
+        //         }
+        //     }
+        //     console.log('task3 '+myStrgn);
+        //     return myStrgn;
+        // }
+        // zogiTo2(mYstrg)
+        // //4
+        // function printYesOrNo(name) {
+        //     if(name[0]=='A')
+        //     {
+        //         console.log('task4 '+'hellow');
+        //     }
+        //     else{
+        //         console.log('task4 '+'bye');
+        //     }
+        // }
+        // printYesOrNo('fdd')
+        // printYesOrNo('Add')
+        //5
+        function IfEtavEnd() {
+            var familyName=prompt('family')
+            if (familyName.lastIndexOf("E") == familyName.length-1)
             {
-                console.log(strg[i]);
-            }
-        }
-        printTav(mYstrg)
-        //2
-        function printIndexOfString(strg) {
-            var myStrgn="";
-            for(var i=0;i<strg.length;i++)
-            {
-                myStrgn=myStrgn+strg[i]+i;
-            }
-            console.log(myStrgn);
-            return myStrgn;
-        }
-        printIndexOfString(mYstrg)
-        //3
-        function zogiTo2(strg) {
-            var myStrgn='';
-            for(var i=0;i<strg.length;i++)
-            {
-                if(i%2==0)
-                { 
-                    myStrgn=myStrgn+strg[i]; 
-                }
-                else
-                {
-                    myStrgn=myStrgn+2;
-                }
-            }
-            console.log(myStrgn);
-            return myStrgn;
-        }
-        zogiTo2(mYstrg)
-        //4
-        function printYesOrNo(name) {
-            if(name[0]=='A')
-            {
-                console.log('hellow');
+                console.log('yes');
             }
             else{
-                console.log('bye');
+                console.log('bydde');
             }
         }
-        printYesOrNo('fdd')
-        printYesOrNo('Add')
-        //5
-        function IfEtavStart(familyName) {
-            if(name[0]=='E')
+        // IfEtavEnd('dddE')
+        //6
+        function toUpprCase(strg) {
+            console.log(strg.toUpperCase());
+            return strg.toUpperCase();
+        }
+        toUpprCase('strg')
+        //7
+        function psikDisapear(num) {
+            for(var i=0;i<num.length;i++)
             {
-                
+                if(num[i]==',')
+                {
+                    num=num
+                }
             }
         }
     </script>
