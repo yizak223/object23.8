@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //70
+        var user={
+            namePravite:'yizak',
+            family:'alaluf',
+            age:23,
+            email:'yizak223@gmail.com'
+        }
+        console.log(user);
+        //71
+        var dog={
+            namePravite:'max',
+            gender:'male',
+            age:23,
+            type:'chiwawa'
+        }
+        console.log(dog);
+        //72
+        var car={
+            color:'red',
+            numberWhiles:4,
+            company:'volvo'
+        }
+        console.log(dog);
+        //73
+        console.log(user.namePravite);
+        //74
+        console.log(dog.age);
+        //75
+        console.log(car.color+car.company);
+        //76
+        function changeFamily() {
+            user.family=prompt()
+            console.log( user.family);
+            return user.family
+        }
+        // changeFamily()
+        //77
+        function changeType() {
+            dog.type=prompt()
+            console.log(dog.type);
+            return dog.type
+        }
+        // console.log(dog.type);
+        // changeType()
+        //78
+        function changeNumWiles() {
+            car. numberWhiles=prompt()
+            console.log(car.numberWhiles);
+            return car.numberWhiles
+        }
+        //79
+        function newValueUser() {
+            var selectUser=prompt('enter form')
+            user[selectUser]=prompt('enter new value');
+            console.log(user[selectUser]);
+            return user[selectUser]
+        }
+        // newValue()
+        //80
+        function changeValueDog() {
+            var selectUser=prompt('enter form')
+            dog[selectUser]=prompt('enter new value');
+            console.log(dog[selectUser]);
+            return dog[selectUser]
+        }
+        // changeValueDog()
+        //81
+        function changeValueCar() {
+            var selectUser=prompt('enter form')
+            car[selectUser]=prompt('enter new value');
+            console.log(car[selectUser]);
+            return car[selectUser]
+        }
+        
+    </script>
+</body>
+</html>

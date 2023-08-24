@@ -75,15 +75,315 @@
         }
         toUpprCase('strg')
         //7
-        function psikDisapear(num) {
-            for(var i=0;i<num.length;i++)
+        function psikDisapear(strNum) {
+            // var Tonum=Number(strNum);
+            var myStr='';
+            for(var i=0;i<strNum.length-1;i++)
             {
-                if(num[i]==',')
+                if(strNum[i]!=',')
                 {
-                    num=num
+                    myStr=myStr+strNum[i];
                 }
             }
+            console.log(myStr);
+            return myStr;
         }
+        function bulitArrayFromString(strNum) {
+          var array=[]
+          var c=0;
+          for(var i=0;i<strNum.length;i++)
+          {
+            if(strNum[i]!=',')
+            {
+             array[c]=strNum[i]
+            c++ 
+            }
+            
+          }
+          console.log(array);
+          return array;
+        }
+        function bulitArrayFromString(strNum) {
+          var array=[]
+          var c=0;
+          for(var i=0;i<strNum.length;i++)
+          {
+            if(strNum[i]!=',')
+            {
+             array[c]=strNum[i]
+            c++ 
+            }
+            
+          }
+          console.log(array);
+          return array;
+        }
+        psikDisapear('1,2,3,4,5,')
+      //8
+      function rand() {
+        return Math.floor(Math.random()*10)
+      }
+      //9
+      function randomUser(num) {
+        return Math.floor(Math.random()*num)
+      }
+      //10
+      function guessRandom(num) {
+        var r=Math.floor(Math.random()*10)
+        if(r==num)
+        {
+            console.log('good!');
+        }
+        else{
+            console.log('you are zero');
+        }
+      }
+      //11
+      function randomArray() {
+        var array=[];
+        for(var i=0;i<10;i++)
+        {
+            array[i]=Math.floor(Math.random()*100)
+        }
+      }
+      //12
+      function whoBiggerRANDOMnumUSER(num) {
+        var random=Math.floor(Math.random()*10)
+        if(num>random)
+        {
+            return num;
+        }
+        else{
+            random
+        }
+      }
+      //13
+      function getTheSmaller() {
+        var num = [];
+        for (var i = 0; i < 5; i++) {
+        
+            num[i]=+prompt('enter num')
+        }
+        console.log(num);
+        var min=Math.min(...num);
+        console.log(min);   
+    }
+      //14
+      function getifZogiBigElseSmaller() {
+        var user=+prompt('enter num');
+        var user=Math.floor(Math.random()*100);
+        if(user%2==0)
+        {
+            return Math.min(user,user)
+        }
+        else
+        {
+            return Math.max(user,user)
+        }
+      }
+      //15
+      function len364val873() {
+        var array=[]
+        for(var i=0;i<Math.floor(Math.random()*364);i++)
+        {
+            array[i]=Math.floor(Math.random()*873)
+        }
+        return array;
+      }
+      len364val873()
+      //16
+      function printRandomIndex(array) {
+        console.log(array[Math.floor(Math.random()*array.length)]);
+      }
+      //17
+      function changeCharat() {
+        var name=prompt('name');
+        var index=Math.floor(Math.random()*(name.length-1))   
+        var nameChange='';
+        nameChange=name.substr(0,index)+name[index].toUpperCase()+name.substr(index,name.length-1)
+        console.log(nameChange);
+      }
+    //   changeCharat()
+      //18
+      function ifStartNumElseMessageElseAge() {
+        var name1=prompt('name1')
+        var name2=prompt('name2')
+        var age=+prompt('age1')
+        var age2=+prompt('age2')
+        var random=Math.floor(Math.random()*873);
+        console.log(random);
+        if(name1[0]==name2[0])
+        {
+            console.log(random);
+        }
+        if(name1[name1.length-1]==name2[name2.length-1])
+        {
+            console.log(name1[name1.length-1]);
+        }
+        else{
+            console.log(age1+age2);
+        }
+      }
+      //19
+      function printUntilRandom() {
+        var text=prompt('text')
+        var random=Math.floor(Math.random()*5)
+        console.log(text.substr(0,random));
+      }
+      //20
+      function checkIfMithalek3() {
+        var num=+prompt('number')
+        var rand=Math.floor(Math.random()*num)
+        if(num%3==0)
+        {
+            for(var i=0;i<rand;i++)
+            {
+                console.log(rand);
+            }
+        }
+        else{
+            console.log(rand*Math.PI);
+        }
+      }
+      //21
+      function printHourAndDate() {
+        var now = new Date();
+        var currentHour = now.getHours();
+        var currentDay = now.getDate();
+        var currentMonth = now.getMonth() + 1; 
+        var currentYear = now.getFullYear();
+
+        console.log("Current Hour:", currentHour);
+        console.log("Current Day:", currentDay);
+        console.log("Current Month:", currentMonth);
+        console.log("Current Year:", currentYear);
+        console.log("Current Hour:", now.getHours(), "Current Date:", now);
+      }
+    //   printHourAndDate()
+      //22
+      function printFromString(dateString) {
+        var timestamp = Date.parse(dateString);
+        var dateObject = new Date(timestamp);
+        console.log(dateObject);
+      }
+      printFromString('08 23 2023 ')
+      //23
+      function printFromStringUser() {
+        var dateString=prompt('enter date')
+        var dateObject = new Date(Date.parse(dateString));
+        console.log(dateObject);
+      }
+    //   printFromStringUser()
+    //24
+    function printFromStringUserMonth() {
+        var dateString=prompt('enter date')
+        
+        var hour = new Date(dateString).getMonth()+1;
+        console.log(hour);
+      }
+    //   printFromStringUserMonth()
+      //25
+       function printFromStringUserYear() {
+        var dateString=prompt('enter date')
+        
+        var hour = new Date(dateString).getFullYear();
+        console.log(hour);
+      }
+    //   printFromStringUserYear()
+    //26
+    function printFromStringUserHour() {
+        var dateString=prompt('enter date')
+        
+        var hour = new Date(dateString).getHours();
+        console.log(hour);
+      }
+    //   printFromStringUserHour()
+    //27
+    function printFromStringUserMinutes() {
+        var dateString=prompt('enter date')
+        
+        var hour = new Date(dateString).getMinutes();
+        console.log(hour);
+      }
+    //   printFromStringUserMinutes()
+    //28
+    function getTheEarilierDate() {
+        var dateString1=prompt('enter date1')
+        var dateString2=prompt('enter date2')
+        var firstDate = new Date(dateString1);
+        var secondDate = new Date(dateString2);
+        if (firstDate < secondDate) {
+            return secondDate
+        }
+         else if (secondDate < firstDate) 
+         {
+            return firstDate
+        } 
+       
+    }
+    //29
+    function getYourAge() {
+        var dateString=prompt('enter your birthdate')
+        var birthdate = new Date(dateString);
+        var today= new Date();
+        var age =today.getFullYear()-birthdate.getFullYear();
+        if(
+            today.getMonth()<birthdate.getMonth()||
+        (today.getMonth() === birthdate.getMonth() &&
+        today.getDate() < birthdate.getDate())
+        )
+        {
+            age--;
+        }
+        return age;
+    }
+    //30
+    function getYourAgeIfBigger18() {
+        var dateString=prompt('enter your birthdate')
+        var birthdate = new Date(dateString);
+        var today= new Date();
+        var age =today.getFullYear()-birthdate.getFullYear();
+        if(
+            today.getMonth()<birthdate.getMonth()||
+        (today.getMonth() === birthdate.getMonth() &&
+        today.getDate() < birthdate.getDate())
+        )
+        {
+            age--;
+        }
+        if(age>18)
+        {
+            alert('get inside')
+        }
+        else{
+            alert('you can not get in')
+        }
+    }
+    // getYourAgeIfBigger18()
+    //31
+    function getYourPosition() {
+        var userDate = prompt("Type a Date in a MM/DD/YYYY  Format:");
+        var mydate= new Date(userDate)
+        var locationUser = mydate.toString().match(/\((.+)\)/)[1];
+        console.log("Parsed Date:", mydate);
+        console.log("Time Zone Offset:", locationUser);
+    }
+    getYourPosition()
+    //32
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    function randomDate() {
+        var month=getRandomInt(1990, 2022)
+        var day=getRandomInt(0, 11)
+        var year=getRandomInt(1, 31)
+        var randomcDate = new Date(year, month, day);
+        console.log(randomcDate);
+        return randomDate;
+    }
+    // randomDate()
+   
+
     </script>
 </body>
 </html>
