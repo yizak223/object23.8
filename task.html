@@ -402,65 +402,35 @@
     }
     // randomDate()
    //33
-   function changeStrToArray(strParam){
-            var newArray=[];
-            var psikIndex = strParam.indexOf(",")//2
-            var startIndex = 0;
-            var tempStr;
-            while(psikIndex>0){
-                tempStr = strParam.substring(startIndex,psikIndex) //12
-                newArray.push(+tempStr);
-                startIndex = psikIndex+1;
-                psikIndex = strParam.indexOf(",",startIndex)//
-            }
-            newArray.push(+strParam.substring(startIndex));
-            return newArray;
-        }
-        var someStr = "12,3,455";
-        console.log(changeStrToArray(someStr)); 
-
    function makeItObject(strParam) {
-    // console.log(strParam);
-    var startIndex=strParam.indexOf(':');
-    var psikIndex=strParam.indexOf(',');
-    var valueString;
-    var biggerValue; 
-    if(psikIndex==-1)
-    {
-       valueString =strParam.substring(startIndex+1,psikIndex);
+      var psikIndex=1;
+      var valueString;
+      var biggerValue=''; 
+      while (psikIndex>0) {  
+      var startIndex=strParam.indexOf(':');
+      psikIndex=strParam.indexOf(',');
+        if(psikIndex==-1)
+      {
+        valueString =strParam.substring(startIndex+1,strParam.length);
+      }
+      else{
+        valueString =strParam.substring(startIndex+1,psikIndex);
+        strParam=strParam.substring(psikIndex+1,(strParam.length));
+      }
+      if(valueString.length>biggerValue.length)
+      {
+        biggerValue=valueString;
+      }
+      } 
+      return biggerValue;  
     }
-    else{
-      valueString =strParam.substring(startIndex+1,psikIndex);
-      strParam=strParam.substring(psikIndex+1,(strParam.length));
-    }
-    console.log(valueString);
-    console.log(strParam);
-    if(psikIndex==-1)
-    {
-       valueString =strParam.substring(startIndex+1,psikIndex);
-    }
-    else{
-      valueString =strParam.substring(startIndex+1,psikIndex);
-      strParam=strParam.substring(psikIndex+1,(strParam.length));
-    }
-    startIndex=strParam.indexOf(':');
-    psikIndex=strParam.indexOf(',');
-    if(psikIndex==-1)
-    {
-      valueString =strParam.substring(startIndex+1,strParam.length);
-    }
-    else{
-      valueString =strParam.substring(startIndex+1,psikIndex);
-    }
-    
-    }
-    
-   
-   makeItObject('color:red,name:yizak,age:18')
+   var b=makeItObject('color:red,name:yizak,age:18,key:value')
+   console.log(b);
+
   //34
   function getLengthKeys(strParam) {
     var tempLength;
-    whi
+    
   }
 
     </script>
