@@ -424,18 +424,37 @@
       } 
       return biggerValue;  
     }
-   var b=makeItObject('color:red,name:yizak,age:18,key:value')
-   console.log(b);
+   var b=makeItObject('color:red,name:yizak,age:18,keyFunnction:value')
 
   //34
-  function getValuesForKey(strParam,key) {
+  function getValuesForKey(strParam,keyUser) {
     var myObject={};
-    while (condition) {
-      
+    // var startIndex=0;
+    var colonIndex=strParam.indexOf(':');
+    var psikIndex=strParam.indexOf(',');
+    var keyFunnction=strParam.substring(0,colonIndex);
+    var value=strParam.substring(colonIndex+1,psikIndex);
+    strParam=strParam.substring(psikIndex+1,strParam.length)
+    myObject[keyFunnction]=value;
+    while (psikIndex>0) {
+      colonIndex=strParam.indexOf(':');
+      psikIndex=strParam.indexOf(',');
+      keyFunnction=strParam.substring(0,colonIndex);
+      value=strParam.substring(colonIndex+1,psikIndex);
+      strParam=strParam.substring(psikIndex+1,strParam.length)
+      if(psikIndex==-1)
+      {
+        value=strParam.substring(colonIndex+1,strParam.length);
+      }
+      myObject[keyFunnction]=value;
     }
-    
+    return myObject[keyUser];
   }
-
+  
+  var a=getValuesForKey('color:red,name:yizak,age:18,keyFunnction:value','keyFunnction')
+  console.log(a);
+  //35
+  
     </script>
 </body>
 </html>
