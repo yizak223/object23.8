@@ -424,36 +424,157 @@
       } 
       return biggerValue;  
     }
-   var b=makeItObject('color:red,name:yizak,age:18,keyFunnction:value')
+   var b=makeItObject('color:red,name:yizak,age:18,key:value')
 
   //34
   function getValuesForKey(strParam,keyUser) {
-    var myObject={};
-    // var startIndex=0;
-    var colonIndex=strParam.indexOf(':');
-    var psikIndex=strParam.indexOf(',');
-    var keyFunnction=strParam.substring(0,colonIndex);
-    var value=strParam.substring(colonIndex+1,psikIndex);
-    strParam=strParam.substring(psikIndex+1,strParam.length)
-    myObject[keyFunnction]=value;
-    while (psikIndex>0) {
-      colonIndex=strParam.indexOf(':');
-      psikIndex=strParam.indexOf(',');
-      keyFunnction=strParam.substring(0,colonIndex);
-      value=strParam.substring(colonIndex+1,psikIndex);
-      strParam=strParam.substring(psikIndex+1,strParam.length)
-      if(psikIndex==-1)
-      {
-        value=strParam.substring(colonIndex+1,strParam.length);
-      }
-      myObject[keyFunnction]=value;
-    }
+    var myObject=makeObjectFromString(strParam);
     return myObject[keyUser];
   }
   
-  var a=getValuesForKey('color:red,name:yizak,age:18,keyFunnction:value','keyFunnction')
-  console.log(a);
+  var a=getValuesForKey('color:red,name:yizak,age:18,key:value','key')
+  // console.log(a);
   //35
+  //function to make object from string
+  function makeObjectFromString(strParam1) {
+    var myObject={};
+    var colonIndex=strParam1.indexOf(':');
+    var psikIndex=strParam1.indexOf(',');
+    var key=strParam1.substring(0,colonIndex);
+    var value=strParam1.substring(colonIndex+1,psikIndex);
+    strParam1=strParam1.substring(psikIndex+1,strParam1.length)
+    myObject[key]=value;
+    while (psikIndex>0) {
+      colonIndex=strParam1.indexOf(':');
+      psikIndex=strParam1.indexOf(',');
+      key=strParam1.substring(0,colonIndex);
+      value=strParam1.substring(colonIndex+1,psikIndex);
+      strParam1=strParam1.substring(psikIndex+1,strParam1.length)
+      if(psikIndex==-1)
+      {
+        value=strParam1.substring(colonIndex+1,strParam1.length);
+      }
+      myObject[key]=value;
+    }
+    return myObject;
+  }
+  function getLengthAllKeys1(strParam2) {
+    var colonIndex=strParam2.indexOf(':');
+    var psikIndex=strParam2.indexOf(',');
+    var key=strParam2.substring(0,colonIndex);
+    var value=strParam2.substring(colonIndex+1,psikIndex);
+    var tempkey=key;
+    strParam2=strParam2.substring(psikIndex+1,strParam2.length)
+    while (psikIndex>0) {
+      colonIndex=strParam2.indexOf(':');
+      psikIndex=strParam2.indexOf(',');
+      key=strParam2.substring(0,colonIndex);
+      value=strParam2.substring(colonIndex+1,psikIndex);
+      strParam2=strParam2.substring(psikIndex+1,strParam2.length)
+      if(psikIndex==-1)
+      {
+        value=strParam2.substring(colonIndex+1,strParam2.length);
+      }
+      tempkey=tempkey+key
+    }
+    return tempkey.length;
+  }
+  var sstring='color:red,name:yizak,age:18,key:value';
+  var e=getLengthAllKeys1(sstring)
+  // console.log(e);
+  function getLengthAllKeys2(strParam) {
+    var MyObject=makeObjectFromString(strParam)
+    var key=Object.keys(MyObject)
+    var keyLength=0;
+    for (var i=0;i<key.length;i++)
+    {
+      keyLength=keyLength+key[i].length;
+    }
+    return keyLength;
+  }
+  
+  var g=getLengthAllKeys2(sstring)
+  // console.log(g);
+  //36
+  function getLengthAllValues1(strParam2) {
+    var colonIndex=strParam2.indexOf(':');
+    var psikIndex=strParam2.indexOf(',');
+    var key=strParam2.substring(0,colonIndex);
+    var value=strParam2.substring(colonIndex+1,psikIndex);
+    var tempValue=value;
+    strParam2=strParam2.substring(psikIndex+1,strParam2.length)
+    while (psikIndex>0) {
+      colonIndex=strParam2.indexOf(':');
+      psikIndex=strParam2.indexOf(',');
+      key=strParam2.substring(0,colonIndex);
+      value=strParam2.substring(colonIndex+1,psikIndex);
+      strParam2=strParam2.substring(psikIndex+1,strParam2.length)
+      if(psikIndex==-1)
+      {
+        value=strParam2.substring(colonIndex+1,strParam2.length);
+      }
+      tempValue=tempValue+value
+    }
+    return tempValue.length;
+  }
+  var vvv=getLengthAllValues1(sstring)
+  // console.log(vvv);
+  function getLengthAllValues2(strParam4) {
+    var MyObject=makeObjectFromString(strParam4)
+    var value=Object.values(MyObject)
+    var valueLength=0;
+    for (var i=0;i<value.length;i++)
+    {
+      valueLength=valueLength+value[i].length;
+    }
+    return valueLength;
+  }
+  var t=getLengthAllValues2(sstring)
+
+  // console.log(t);
+  //37
+  function isBigger5(sTrparams) {
+    if(sTrparams.length>5)
+    {
+      return 'long'
+    }
+    else{
+      return 'short'
+    }
+  }
+  //38
+  function ifaExsist(Strparam) {
+    for(var i=0;i<Strparam.length-1;i++)
+    {
+      if (Strparam[i]=='a') {
+        return i;
+      }
+    }
+    return console.log('not found');
+  }
+  var example=ifaExsist('Strprm')
+  // console.log(example);
+  //39
+  function ifeExsist(Strparam) {
+    for(var i=0;i<Strparam.length-1;i++)
+    {
+      if (Strparam[i]=='e') {
+        return true;
+      }
+    }
+    return console.log('false');
+  }
+  //40
+  function ifTavExsist(Strparam,tav) {
+    for(var i=0;i<Strparam.length-1;i++)
+    {
+      if (Strparam[i]==tav) {
+        return true;
+      }
+    }
+    return console.log('false');
+  }
+  //41
   
     </script>
 </body>
