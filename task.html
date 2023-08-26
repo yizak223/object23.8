@@ -552,7 +552,7 @@
     }
     return console.log('not found');
   }
-  var example=ifaExsist('Strprm')
+  // var example=ifaExsist('Strprm')
   // console.log(example);
   //39
   function ifeExsist(Strparam) {
@@ -575,7 +575,244 @@
     return console.log('false');
   }
   //41
+  function tavInString(tav,stringParam) {
+    for(var i=0;i<stringParam.length;i++)
+    {
+      if (tav==stringParam[i]) {
+        return console.log('the charat is in index:',i);
+      }
+    }
+    console.log('the charat isnt exsist');
+  }
   
+  function tavInString1(tav,stringParam) {
+    var iLast=stringParam.indexOf(tav)
+    if (iLast==-1) {
+      return console.log('the charat isnt exsist');
+      
+    }
+    return console.log('the charat is in index:',iLast);
+  }
+  // tavInString1(' ','stringParam')
+  //42
+function get3tav() {
+  var str='sayonara'
+  return str.substr(0,3)
+}
+//45
+function get4tav() {
+  var str='sayonara'
+  return str.substr(0,4)
+}
+//46
+function get4tav() {
+  var str='sayonara'
+  i=str.indexOf('o')
+  return str.substr(i,str.length)
+}
+
+//47 48
+function name(stringg,index) {
+  if(index>stringg.length)
+  {
+    return console.log('the index too bigger');
+  }
+  return stringg.substr(index,stringg.length)
+}
+//49 50
+function name(stringg,index) {
+  if(index>stringg.length)
+  {
+    return console.log('the index too bigger');
+  }
+  return stringg.substr(index,3)
+}
+
+var i=name('stringg',5)
+// console.log(i);
+//51
+function getfromYourIndexs(sstring,i,j) {
+  i=Math.floor(i)
+  j=Math.floor(j)
+  return sstring.substr(i,j)
+}
+//52
+//like 43
+//54
+//like 45
+//55
+//like 46
+//56
+function checkName() 
+{
+  var nameUser=prompt('enter full name')
+  console.log(nameUser.length);
+  var r=nameUser.indexOf(' ')
+  if(r!=-1)
+  {
+    console.log('there is a revah in the name');
+    var private=nameUser.substr(0,r)
+    console.log(private);
+    var family=nameUser.substr(r,nameUser.length)
+    console.log(family);
+  }
+}
+//57
+function checkIfEqualLowerCase(srt1,srt2) {
+  srt1=srt1.toLowerCase()
+  srt2=srt2.toLowerCase()
+  if(srt1==srt2)
+  {
+    return console.log('they are equals');
+  }
+}
+//58
+function checkIfEqualUpperCase(srt1,srt2) {
+  srt1=srt1.toUpperCase()
+  srt2=srt2.toUpperCase()
+  if(srt1==srt2)
+  {
+    return console.log('they are equals');
+  }
+}
+//59
+function familtOrPRIVATEbigger() {
+  var nameUser=prompt('enter full name')
+  var r=nameUser.indexOf(' ')
+  var private=nameUser.substr(0,r)
+  var family=nameUser.substr(r,nameUser.length)
+  if (private>family) {
+    return console.log(private);
+  }
+  if (private<family) {
+    return console.log(family);
+  }
+}
+//60 62
+function checkInUserName() {
+  var fullName = prompt('Enter full name');
+  var spaceIndex = fullName.indexOf(' ');
+  var firstName = fullName.substring(0, spaceIndex);
+  var lastName = fullName.substring(spaceIndex + 1);
+
+  var lowercaseFirstName = firstName.toLowerCase();
+  var lowercaseLastName = lastName.toLowerCase();
+
+  var indexOfAInFirstName = lowercaseFirstName.indexOf('a');
+  var indexOfApiInLastName = lowercaseLastName.indexOf('api');
+
+  if (indexOfAInFirstName !== -1) {
+    console.log('There is an "a" in the first name.');
+  }
+
+  if (indexOfApiInLastName !== -1) {
+    console.log('There is "api" in the last name.');
+  }
+}
+//62
+function isBigger5(sTrparams) {
+    if(sTrparams.length>5)
+    {
+      return 'long'
+    }
+    else{
+      return 'short'
+    }
+  }
+  //63
+  function checkLengthCountry(country) {
+    if(country.length<3)
+    {
+      return console.log('yes');
+    }
+    return console.log('no');
+  }
+  //64
+  function checkIfStringMore6(stringparam,tav) {
+    if (stringparam.length>6) {
+      return stringparam
+    }
+    return stringparam.indexOf(tav)
+  }
+  //65
+  function checkIfStringMore6(stringparam,tav) {
+    charExsist=stringparam.indexOf(tav)
+    if (tav!=-1)
+    {
+      return charExsist
+    }
+    return stringparam
+  }
+  //66
+  function makeUserNameFormat() {
+    var userName=prompt('name')
+    var firstChar=userName.substr(0,1)
+    var spaceName=userName.indexOf(" ")
+    var lastName=userName.substr(spaceName,userName.length)
+    lastName= lastName.toUpperCase()
+    var format=firstChar+'. '+lastName
+    console.log(format);
+  }
+  //68
+function GetLastNaneBigger() {
+  var userName=prompt('name')
+  var spaceName=userName.indexOf(" ")
+  lastName1=userName.substr(0,spaceName)
+  lastName2=userName.substr(spaceName,userName.length)
+  if (lastName1>lastName2) {
+    console.log(lastName1);
+    console.log(lastName2.toLowerCase());
+  }
+  if (lastName1<lastName2) {
+    console.log(lastName2);
+    console.log(lastName1.toLowerCase());
+  }
+}
+// GetLastNaneBigger()
+//69
+function checkIfCharExsist(tav,name) {
+  var i=name.indexOf(tav)
+  if(i!=-1)
+  {
+    return i
+  }
+  console.log('the char isnt exsist');
+}
+//70
+function howMuchWordInName(name) {
+  var j=0;
+  var space=name.indexOf(' ')
+  for(var i=0;i<name.length;i++)
+  {
+    if(name[i]==" ")
+    {
+      j++
+    }
+  }
+  if(j==0)
+  {
+    var temp=name.substr(0,1)
+    temp=temp.toUpperCase()
+    name=name.substr(1,name.length)
+    name=temp+name
+    return name
+  }
+  if(j==1)
+  {
+    var array=[];
+    array[0]=name.substr(0,space)
+    array[1]=name.substr(space,name.length)
+    return array
+  }
+  if(j==2)
+  {
+    var first=name.substr(0,space)
+    var lastSpace=name.lastIndexOf(' ')
+    var middle=name.substr(space,lastSpace-space)
+    var last=name.substr(lastSpace,name.length)
+    console.log('first:',first," middle:",middle,' last:',last);
+  }
+}
     </script>
 </body>
 </html>
