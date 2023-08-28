@@ -121,14 +121,14 @@
         }
         function changeStrToArray(strParam){
             var newArray=[];
-            var psikIndex = strParam.indexOf(",")//2
+            var commaIndex = strParam.indexOf(",")//2
             var startIndex = 0;
             var tempStr;
-            while(psikIndex>0){
-                tempStr = strParam.substring(startIndex,psikIndex) //12
+            while(commaIndex>0){
+                tempStr = strParam.substring(startIndex,commaIndex) //12
                 newArray.push(+tempStr);
-                startIndex = psikIndex+1;
-                psikIndex = strParam.indexOf(",",startIndex)//
+                startIndex = commaIndex+1;
+                commaIndex = strParam.indexOf(",",startIndex)//
             }
             newArray.push(+strParam.substring(startIndex));
             return newArray;
@@ -403,19 +403,19 @@
     // randomDate()
    //33
    function makeItObject(strParam) {
-      var psikIndex=1;
+      var commaIndex=1;
       var valueString;
       var biggerValue=''; 
-      while (psikIndex>0) {  
+      while (commaIndex>0) {  
       var startIndex=strParam.indexOf(':');
-      psikIndex=strParam.indexOf(',');
-        if(psikIndex==-1)
+      commaIndex=strParam.indexOf(',');
+        if(commaIndex==-1)
       {
         valueString =strParam.substring(startIndex+1,strParam.length);
       }
       else{
-        valueString =strParam.substring(startIndex+1,psikIndex);
-        strParam=strParam.substring(psikIndex+1,(strParam.length));
+        valueString =strParam.substring(startIndex+1,commaIndex);
+        strParam=strParam.substring(commaIndex+1,(strParam.length));
       }
       if(valueString.length>biggerValue.length)
       {
@@ -439,18 +439,18 @@
   function makeObjectFromString(strParam1) {
     var myObject={};
     var colonIndex=strParam1.indexOf(':');
-    var psikIndex=strParam1.indexOf(',');
+    var commaIndex=strParam1.indexOf(',');
     var key=strParam1.substring(0,colonIndex);
-    var value=strParam1.substring(colonIndex+1,psikIndex);
-    strParam1=strParam1.substring(psikIndex+1,strParam1.length)
+    var value=strParam1.substring(colonIndex+1,commaIndex);
+    strParam1=strParam1.substring(commaIndex+1,strParam1.length)
     myObject[key]=value;
-    while (psikIndex>0) {
+    while (commaIndex>0) {
       colonIndex=strParam1.indexOf(':');
-      psikIndex=strParam1.indexOf(',');
+      commaIndex=strParam1.indexOf(',');
       key=strParam1.substring(0,colonIndex);
-      value=strParam1.substring(colonIndex+1,psikIndex);
-      strParam1=strParam1.substring(psikIndex+1,strParam1.length)
-      if(psikIndex==-1)
+      value=strParam1.substring(colonIndex+1,commaIndex);
+      strParam1=strParam1.substring(commaIndex+1,strParam1.length)
+      if(commaIndex==-1)
       {
         value=strParam1.substring(colonIndex+1,strParam1.length);
       }
@@ -460,18 +460,18 @@
   }
   function getLengthAllKeys1(strParam2) {
     var colonIndex=strParam2.indexOf(':');
-    var psikIndex=strParam2.indexOf(',');
+    var commaIndex=strParam2.indexOf(',');
     var key=strParam2.substring(0,colonIndex);
-    var value=strParam2.substring(colonIndex+1,psikIndex);
+    var value=strParam2.substring(colonIndex+1,commaIndex);
     var tempkey=key;
-    strParam2=strParam2.substring(psikIndex+1,strParam2.length)
-    while (psikIndex>0) {
+    strParam2=strParam2.substring(commaIndex+1,strParam2.length)
+    while (commaIndex>0) {
       colonIndex=strParam2.indexOf(':');
-      psikIndex=strParam2.indexOf(',');
+      commaIndex=strParam2.indexOf(',');
       key=strParam2.substring(0,colonIndex);
-      value=strParam2.substring(colonIndex+1,psikIndex);
-      strParam2=strParam2.substring(psikIndex+1,strParam2.length)
-      if(psikIndex==-1)
+      value=strParam2.substring(colonIndex+1,commaIndex);
+      strParam2=strParam2.substring(commaIndex+1,strParam2.length)
+      if(commaIndex==-1)
       {
         value=strParam2.substring(colonIndex+1,strParam2.length);
       }
@@ -498,18 +498,18 @@
   //36
   function getLengthAllValues1(strParam2) {
     var colonIndex=strParam2.indexOf(':');
-    var psikIndex=strParam2.indexOf(',');
+    var commaIndex=strParam2.indexOf(',');
     var key=strParam2.substring(0,colonIndex);
-    var value=strParam2.substring(colonIndex+1,psikIndex);
+    var value=strParam2.substring(colonIndex+1,commaIndex);
     var tempValue=value;
-    strParam2=strParam2.substring(psikIndex+1,strParam2.length)
-    while (psikIndex>0) {
+    strParam2=strParam2.substring(commaIndex+1,strParam2.length)
+    while (commaIndex>0) {
       colonIndex=strParam2.indexOf(':');
-      psikIndex=strParam2.indexOf(',');
+      commaIndex=strParam2.indexOf(',');
       key=strParam2.substring(0,colonIndex);
-      value=strParam2.substring(colonIndex+1,psikIndex);
-      strParam2=strParam2.substring(psikIndex+1,strParam2.length)
-      if(psikIndex==-1)
+      value=strParam2.substring(colonIndex+1,commaIndex);
+      strParam2=strParam2.substring(commaIndex+1,strParam2.length)
+      if(commaIndex==-1)
       {
         value=strParam2.substring(colonIndex+1,strParam2.length);
       }
@@ -813,6 +813,7 @@ function howMuchWordInName(name) {
     console.log('first:',first," middle:",middle,' last:',last);
   }
 }
+
     </script>
 </body>
 </html>
